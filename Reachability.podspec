@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://developer.apple.com/library/ios/samplecode/Reachability/Introduction/Intro.html'
   s.license      = { :type => 'APSL', :text => 'Copyright (C) 2015 Apple Inc. All Rights Reserved.' }
   s.author       = 'Apple Inc.'
-  s.source       = { :git => 'https://github.com/GyazSquare/Reachability.git', :tag => '4.2' }
+  s.source       = { :git => 'https://github.com/GyazSquare/Reachability.git', :tag => 'v4.2' }
   s.platform = :ios, '8.0'
   s.source_files = 'Reachability/Reachability.{h,m}'
   s.frameworks   = 'SystemConfiguration'
