@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2015 Apple Inc. All Rights Reserved.
+ Copyright (C) 2016 Apple Inc. All Rights Reserved.
  See LICENSE.txt for this sample’s licensing information
  
  Abstract:
@@ -21,12 +21,8 @@
 @property (nonatomic, weak) IBOutlet UIImageView *internetConnectionImageView;
 @property (nonatomic, weak) IBOutlet UITextField *internetConnectionStatusField;
 
-@property (nonatomic, weak) IBOutlet UIImageView *localWiFiConnectionImageView;
-@property (nonatomic, weak) IBOutlet UITextField *localWiFiConnectionStatusField;
-
 @property (nonatomic) Reachability *hostReachability;
 @property (nonatomic) Reachability *internetReachability;
-@property (nonatomic) Reachability *wifiReachability;
 
 @end
 
@@ -59,9 +55,6 @@
 	[self.internetReachability startNotifier];
 	[self updateInterfaceWithReachability:self.internetReachability];
 
-    self.wifiReachability = [Reachability reachabilityForLocalWiFi];
-	[self.wifiReachability startNotifier];
-	[self updateInterfaceWithReachability:self.wifiReachability];    
 }
 
 
@@ -103,10 +96,6 @@
 		[self configureTextField:self.internetConnectionStatusField imageView:self.internetConnectionImageView reachability:reachability];
 	}
 
-	if (reachability == self.wifiReachability)
-	{
-		[self configureTextField:self.localWiFiConnectionStatusField imageView:self.localWiFiConnectionImageView reachability:reachability];
-	}
 }
 
 
